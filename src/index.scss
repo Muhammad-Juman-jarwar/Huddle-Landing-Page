@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@400;600&display=swap');
+@import './variables';
+@import './mixins';
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+ul {
+  list-style: none;
+  @include mQ-sm(768px) {
+    margin-bottom: 15px;
+  }
+  li {
+    line-height: 2;
+  }
+}
+a {
+  text-decoration: none;
+  color: $pureColor;
+  font-weight: 300;
+}
+.header__nav--items {
+  width: 85%;
+  margin: auto;
+  height: 12vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .btn {
+    @include btn;
+    font-weight: 600;
+    text-transform: capitalize;
+    transition: all 250ms linear;
+    &:hover {
+      background: $pink;
+      color: $pureColor;
+    }
+    @include mQ-sm(768px) {
+      width: 100px;
+    }
+  }
+}
+
+.header__content--wrapper {
+  width: 85%;
+  margin: auto;
+  min-height: 80vh;
+  @include flexProperties;
+  padding-bottom: 30px;
+  gap: 2rem;
+
+  //   media query
+  @include mQ-sm(768px) {
+    min-height: 130vh;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 3rem;
+  }
+}
+
+.header__content--content {
+  width: 100%;
+  max-width: 500px;
+  h1 {
+    font-size: $fontSizeLarge + 10;
+    margin-bottom: 2rem;
+    text-transform: capitalize;
+  }
+  p {
+    line-height: 1.7rem;
+  }
+  // large pink btn
+  .btn__large {
+    @include btn-large;
+    cursor: pointer;
+    font-weight: 500;
+  }
+}
+.header__content--hero-image {
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+// card__container section
+
+.card__container {
+  width: 80%;
+  margin: 100px auto 0;
+  @include mQ-sm(768px) {
+    // margin: 200px auto 0;
+  }
+  position: relative;
+
+  .cards__container--wrapper {
+    @include flexProperties;
+    flex-direction: column;
+    gap: 2.5rem;
+    .card {
+      width: 100%;
+      padding: 30px;
+      background: $pureColor;
+      box-shadow: $boxShadow;
+
+      img {
+        width: 300px;
+        height: auto;
+      }
+    }
+  }
+}
+
+.card__content {
+  @include flexProperties;
+  @include mQ-sm(768px) {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .card__content-description {
+    width: 100%;
+    max-width: 500px;
+    h1 {
+      margin-bottom: 1.5rem;
+      font-weight: bold;
+      color: $VeryDarkCyan;
+    }
+    p {
+      line-height: 1.5;
+      color: $GrayishBlue;
+      margin-bottom: 3rem;
+    }
+  }
+}
+.reverse__items {
+  //   flex-direction: row-reverse;
+  @include mQ-sm(768px) {
+    flex-direction: column-reverse;
+  }
+}
+
+// footer content
+
+footer {
+  width: 100%;
+  height: auto;
+  padding: 0 15px 25px 0;
+  margin-top: 300px;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: $VeryDarkCyan;
+}
+
+.footer__call-to-action {
+  width: 500px;
+  height: 180px;
+  background: $pureColor;
+  box-shadow: $boxShadow;
+  margin: auto;
+  position: relative;
+  display: grid;
+  place-items: center;
+  top: -100px;
+  text-align: center;
+  padding: 0 5px;
+  border-radius: $borderRadiusSmallBtn;
+  @include mQ-sm(768px) {
+    width: 80%;
+  }
+  h1 {
+    font-size: 1.5rem;
+    @include mQ-sm(768px) {
+      font-size: 1rem;
+    }
+  }
+  .btn__large {
+    @include btn-large;
+    cursor: pointer;
+  }
+}
+.footer-wrapper {
+  width: 80%;
+  margin: auto;
+  @include mQ-sm(768px) {
+    width: 90%;
+  }
+  color: $pureColor;
+  svg {
+    margin-bottom: 2rem;
+  }
+}
+.footer__content-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  @include mQ-sm(768px) {
+    flex-direction: column;
+  }
+
+  div {
+    line-height: 2.3;
+    @include mQ-sm(768px) {
+      margin-bottom: 15px;
+    }
+  }
+  img {
+    margin-right: 15px;
+  }
+}
+
+.location__desc {
+  width: 100%;
+  max-width: 350px;
+
+  display: flex;
+  align-items: flex-start;
+  .text-description {
+    margin-left: 15px;
+  }
+}
+
+.social__links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  a svg {
+    padding: 5px;
+    border: 1px solid $pureColor;
+    border-radius: 50%;
+    fill: $pureColor;
+    width: 30px;
+    margin: 0;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  @include mQ-sm(768px) {
+    margin: 40px auto 20px;
+  }
+}
+
+.copyright {
+  text-align: right;
+  color: #fff;
+  font-size: 0.675rem;
+
+  @include mQ-sm(768px) {
+    text-align: center;
+    margin-top: 20px;
+  }
+}

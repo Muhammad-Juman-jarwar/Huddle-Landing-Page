@@ -1,0 +1,42 @@
+// @mixins
+
+@mixin btn {
+  width: 150px;
+  outline: none;
+  border: none;
+  padding: 7px;
+  border-radius: $borderRadiusSmallBtn;
+  box-shadow: $boxShadow;
+  cursor: pointer;
+  background: $pureColor;
+  color: $VeryDarkCyan;
+}
+
+@mixin flexProperties {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin btn-large {
+  width: 230px;
+  outline: none;
+  border: none;
+  padding: 14px;
+  border-radius: $borderRadiusLargeBtn;
+  background: $pink;
+  color: $pureColor;
+  margin-top: 30px;
+  transition: all 250ms linear;
+  &:hover {
+    background: $VeryDarkCyan;
+    color: $pureColor;
+  }
+}
+
+// mobile sizes
+@mixin mQ-sm($arg) {
+  @media screen and (max-width: $arg) {
+    @content;
+  }
+}
